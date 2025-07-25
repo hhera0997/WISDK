@@ -70,6 +70,7 @@ public static void DestroyWVIn() {
 }
 
 ```
+
 ✅ **key** 为字符串类型地址，由我方提供，请联系运营获取。
 
 ## 使用说明与调用步骤
@@ -77,9 +78,11 @@ public static void DestroyWVIn() {
 ### ✅ 创建 WebView 前的配置判断
 
 在调用 `CreateWVIn()` 创建 WebView 之前，务必先调用：
+
 ```
 IsConfigEnabled();
 ```
+
 以确保配置加载完成。
 
 ### 💡 调用逻辑推荐
@@ -90,5 +93,5 @@ IsConfigEnabled();
 📌 **注意：**
 
 - ✅ WebView 会默认显示在游戏的最上层，请根据需要使用传入参数设定显示区域。
-- 👁 如果使用前端展示功能，在商店审核阶段不显示调用按钮，自主控制按钮显示。
+- 👁 如果使用前端展示功能，在商店审核阶段不显示调用按钮。
 - 🔁 屏幕方向为竖屏
