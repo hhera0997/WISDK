@@ -47,51 +47,7 @@ protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     wm = new Manager(this, key); // key 为我方提供
 }
-/*
- * =============================================
- * WebView 前端展示功能（可选）
- * 以下方法为接入 SDK 的 WebView 展示控制接口
- * 如不需要展示 WebView，到此 SDK 接入即完成
- * =============================================
- */
-// 判断是否可以显示创建 WebView 按钮，游戏启动10秒后开始获取，商店审核阶段不显示
-public static boolean IsConfigEnabled() {
-    return wm.isConfigEnabled();
-}
-
-// 创建 WebView ，参数为距离屏幕边距
-public static void CreateWVIn(int left, int top, int right, int bottom) {
-    wm.createWVIn(left, top, right, bottom);
-}
-
-// 销毁 WebView
-public static void DestroyWVIn() {
-    wm.destroyWVIn();
-}
 
 ```
 
 ✅ **key** 为字符串类型地址，由我方提供，请联系运营获取。
-
-## 使用说明与调用步骤
-
-### ✅ 创建 WebView 前的配置判断
-
-在调用 `CreateWVIn()` 创建 WebView 之前，务必先调用：
-
-```
-IsConfigEnabled();
-```
-
-以确保配置加载完成。
-
-### 💡 调用逻辑推荐
-
-- ✅ 调用 `CreateWVIn` 创建 WebView（自动加载并显示，界面提供了手动关闭按钮）
-- ❌ 调用 `DestroyWVIn` 销毁 WebView，释放资源（代码主动销毁）
-
-📌 **注意：**
-
-- ✅ WebView 会默认显示在游戏的最上层，请根据需要使用传入参数设定显示区域。
-- 👁 如果使用前端展示功能，在商店审核阶段不显示调用按钮，自主控制按钮显示。
-- 🔁 屏幕方向为竖屏
