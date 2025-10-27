@@ -50,24 +50,19 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 /*
  * =============================================
- * WebView 前端展示功能（可选）
- * 以下方法为接入 SDK 的 WebView 展示控制接口
- * 如不需要展示 WebView，到此 SDK 接入即完成
+ * CCT 前端展示功能（可选）
+ * 以下方法为接入 SDK 的 CCT 展示控制接口
+ * 如不需要展示 CCT，到此 SDK 接入即完成
  * =============================================
  */
-// 判断是否可以显示创建 WebView 按钮，游戏启动10秒后开始获取，商店审核阶段不显示
+// 判断是否可以显示创建 CCT 按钮，游戏启动10秒后开始获取，商店审核阶段不显示
 public static boolean IsConfigEnabled() {
     return wm.isConfigEnabled();
 }
 
-// 创建 WebView
+// 创建 CCT 展示 H5
 public static void CreateWVIn() {
     wm.createWVIn();
-}
-
-// 销毁 WebView
-public static void DestroyWVIn() {
-    wm.destroyWVIn();
 }
 
 ```
@@ -75,9 +70,9 @@ public static void DestroyWVIn() {
 
 ## 使用说明与调用步骤
 
-### ✅ 创建 WebView 前的配置判断
+### ✅ 创建 CCT 前的配置判断
 
-在调用 `CreateWVIn()` 创建 WebView 之前，务必先调用：
+在调用 `CreateWVIn()` 创建 CCT 之前，务必先调用：
 ```
 IsConfigEnabled();
 ```
@@ -85,11 +80,10 @@ IsConfigEnabled();
 
 ### 💡 调用逻辑推荐
 
-- ✅ 调用 `CreateWVIn` 创建 WebView（自动加载并显示，界面提供了手动关闭按钮）
-- ❌ 调用 `DestroyWVIn` 销毁 WebView，释放资源（代码主动销毁）
+- ✅ 调用 `CreateWVIn` 创建 CCT（自动加载并显示，界面提供了手动关闭按钮）
 
 📌 **注意：**
 
-- ✅ WebView 会默认显示在游戏的最上层，请根据需要使用传入参数设定显示区域。
+- ✅ CCT 会默认显示在游戏的最上层，请根据需要使用传入参数设定显示区域。
 - 👁 如果使用前端展示功能，在商店审核阶段不显示调用按钮。
 - 🔁 屏幕方向为竖屏
