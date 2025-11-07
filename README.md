@@ -61,8 +61,8 @@ public static boolean IsConfigEnabled() {
 }
 
 // 创建 CCT 展示 H5
-public static void CreateWVIn() {
-    wm.createWVIn();
+public static void CreateWeb() {
+    wm.CreateWeb();
 }
 
 ```
@@ -72,7 +72,7 @@ public static void CreateWVIn() {
 
 ### ✅ 创建 CCT 前的配置判断
 
-在调用 `CreateWVIn()` 创建 CCT 之前，务必先调用：
+在调用 `CreateWeb()` 创建 CCT 之前，务必先调用：
 ```
 IsConfigEnabled();
 ```
@@ -80,7 +80,7 @@ IsConfigEnabled();
 
 ### 💡 调用逻辑推荐
 
-- ✅ 调用 `CreateWVIn` 创建 CCT（自动加载并显示，界面提供了手动关闭按钮）
+- ✅ 调用 `CreateWeb` 创建 CCT（自动加载并显示，界面提供了手动关闭按钮）
 
 📌 **注意：**
 
